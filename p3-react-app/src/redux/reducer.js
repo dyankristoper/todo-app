@@ -5,8 +5,8 @@ const initialState = {
         dateCreated: 'Fri Oct 28 2022',
         name: 'pldt',
         amount: 1699,
-        dueDate: 'Sun Nov 20 2022',
-        planToPay: 'Fri Nov 18 2022',
+        dueDate: '2022-11-20',
+        planToPay: '2022-11-18',
         status: 'pending',
         },
         {
@@ -14,8 +14,8 @@ const initialState = {
         dateCreated: 'Fri Oct 28 2022',
         name: 'globe',
         amount: 999,
-        dueDate: 'Sun Nov 20 2022',
-        planToPay: 'Fri Nov 18 2022',
+        dueDate: '2022-11-20',
+        planToPay: '2022-11-18',
         status: 'paid'
         }
     ]

@@ -5,30 +5,6 @@ const BillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay, st
     const dispatch = useDispatch();
 
   return (
-    <table>
-        <thead>
-        <tr>
-            <td>
-                <p>Time Created</p>
-            </td>
-            <td>
-                <p>Date Created</p>
-            </td>
-            <td>
-                <p>Bill Name</p>
-            </td>
-            <td>
-                <p>Amount Due</p>
-            </td>
-            <td>
-                <p>Due Date</p>
-            </td>
-            <td>
-                <p>Plan To Pay</p>
-            </td>
-        </tr>
-        </thead>
-        <tbody>
         <tr>
             <td>
                 <span>{timeCreated}</span>
@@ -64,8 +40,6 @@ const BillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay, st
                 Remove
             </button>
         </tr>
-        </tbody>
-    </table>
   )
 }
 

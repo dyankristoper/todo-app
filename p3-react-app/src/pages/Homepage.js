@@ -1,11 +1,16 @@
+import { useSelector } from "react-redux";
+import { useState } from 'react';
 import AllBillRow from "../components/AllBillRow";
 
 const Homepage = ({allPendingBills, allPaidBills}) => {
 
-  let pendingTotal = 0;
-  const pendingBills = allPendingBills.map( bill => {
-    pendingTotal = parseFloat(pendingTotal) + parseFloat(bill.amount);
+  const bills = useSelector( state => state.allBills);
+  const [filterByName, setFilterByName] = useState('');
 
+  const pendingBills = allPendingBills
+  // Need to fix filter
+  .filter(bill => bill.name === filterByName)
+  .map( bill => {
     return <AllBillRow
               key = {bill.name}
               timeCreated = {bill.timeCreated}
@@ -17,10 +22,10 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
               status = {bill.status} />
   })
 
-  let paidTotal =  0;
-  const paidBills = allPaidBills.map( bill => {
-    paidTotal = parseFloat(paidTotal) + parseFloat(bill.amount);
-
+  const paidBills = allPaidBills
+  // Need to fix filter
+  .filter(bill => bill.name === filterByName)
+  .map( bill => {
     return <AllBillRow
                     key = {bill.name}
                     timeCreated = {bill.timeCreated}
@@ -32,9 +37,24 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
                     status = {bill.status} />
                   })
 
+    let allTotal = 0;
+    const allBillsTotal = bills.map( bill => {
+      allTotal = parseFloat(allTotal) + parseFloat(bill.amount)
+    })
 
   return (
     <>
+      <div>
+        <input 
+          type='text' 
+          placeholder='Search Bill Name...' 
+          value={ filterByName }
+          onChange={ e => setFilterByName(e.target.value) }  
+        />
+      </div>
+      <div>
+        <p>All Total: {allTotal}</p>
+      </div>
       <table>
         <tr>
             <td>
