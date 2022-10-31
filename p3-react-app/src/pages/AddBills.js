@@ -33,7 +33,7 @@ const AddBills = () => {
       setHasError( true );
       setErrorMessage('Input Cannot Be Empty!');
     }
-    else if(allBills.filter( bill => bill.name.trim().toLowerCase() === billName.trim().toLowerCase()).length !==0) {
+    else if(allBills.filter( bill => bill.name.trim().toUpperCase() === billName.trim().toUpperCase()).length !==0) {
       setHasError( true );
         setErrorMessage('Bill is already exist! Please try again.');
     }
@@ -43,7 +43,7 @@ const AddBills = () => {
           amount: billAmount,
           dueDate: billDueDate,
           planToPay: billPlanToPay,
-          status: 'pending'
+          status: 'PENDING'
 
         }})
         setHasError( false );

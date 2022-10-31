@@ -1,3 +1,4 @@
+// Packages
 import {Routes, Route} from 'react-router';
 import { useSelector } from 'react-redux';
 
@@ -15,9 +16,9 @@ const App = () => {
   
   const bills = useSelector( state => state.allBills);
 
-  const allPendingBills = bills.filter(bill => bill.status.toLowerCase() === 'pending');
+  const allPendingBills = bills.filter(bill => bill.status.toUpperCase() === 'PENDING');
 
-  const allPaidBills = bills.filter(bill => bill.status.toLowerCase() === 'paid');
+  const allPaidBills = bills.filter(bill => bill.status.toUpperCase() === 'PAID');
 
   return (
     <>

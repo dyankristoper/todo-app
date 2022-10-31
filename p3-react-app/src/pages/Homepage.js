@@ -7,9 +7,14 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
   const bills = useSelector( state => state.allBills);
   const [filterByName, setFilterByName] = useState('');
 
-  const pendingBills = allPendingBills
-  // Need to fix filter
-  .filter(bill => bill.name === filterByName)
+  const pendingBills = allPendingBills.filter(bill => {
+    if (filterByName === '') {
+      return bill;
+    }
+    else if (bill.name.toUpperCase().includes(filterByName.toUpperCase())) {
+      return bill;
+    }
+  })
   .map( bill => {
     return <AllBillRow
               key = {bill.name}
@@ -22,9 +27,14 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
               status = {bill.status} />
   })
 
-  const paidBills = allPaidBills
-  // Need to fix filter
-  .filter(bill => bill.name === filterByName)
+  const paidBills = allPaidBills.filter(bill => {
+    if (filterByName === '') {
+      return bill
+    }
+    else if (bill.name.toUpperCase().includes(filterByName.toUpperCase())) {
+      return bill
+    }
+  })
   .map( bill => {
     return <AllBillRow
                     key = {bill.name}

@@ -16,7 +16,7 @@ const BillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay, st
                 <span>{name}</span>
             </td>
             <td>
-                <span>{amount}</span>
+                <span>&#8369;{amount}</span>
             </td>
             <td>
                 <span>{dueDate}</span>
@@ -25,13 +25,13 @@ const BillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay, st
                 <span>{planToPay}</span>
             </td>
             {
-                status === 'pending' &&
+                status === 'PENDING' &&
                 <button onClick = { () => dispatch({ type: 'PAID', payload: {name: name}})}>
                     Paid
                 </button>
             }
             {
-                status === 'paid' &&
+                status === 'PAID' &&
                 <button onClick = { () => dispatch({ type: 'UNDO', payload: {name: name}})}>
                     Undo
                 </button>

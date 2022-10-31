@@ -12,7 +12,7 @@ const AllBillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay,
             <span>{name}</span>
         </td>
         <td>
-            <span>{amount}</span>
+            <span>&#8369;{amount}</span>
         </td>
         <td>
             <span>{dueDate}</span>
