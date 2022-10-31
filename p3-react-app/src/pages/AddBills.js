@@ -50,6 +50,8 @@ const AddBills = () => {
         setErrorMessage('');
         setBillName('');
         setBillAmount('');
+        setBillDueDate('');
+        setBillPlanToPay('');
     }
 }
 

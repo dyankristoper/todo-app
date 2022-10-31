@@ -19,28 +19,6 @@ const App = () => {
 
   const allPaidBills = bills.filter(bill => bill.status.toLowerCase() === 'paid');
 
-  // const pendingTotal = bills.filter((bill) => {return bill.status === 'pending'}).reduce((prevVal, billVal) => {return prevVal + billVal.amount});
-
-  // const paidTotal = bills.filter((bill) => {return bill.status === 'paid'}).reduce((prevVal, billVal) => {return prevVal + billVal.amount});
-
-  // const addNewBill = (newBillName, newBillAmount, newBillDueData, newBillPlanToPay) => {
-  //   let currentBills = bills;
-  //   const date = new Date();
-  //   const currentDate = date.toDateString();
-  //   const currentTime = date.toLocaleTimeString();
-
-  //   currentBills.push( {
-  //       timeCreated: currentTime,
-  //       dateCreated: currentDate,
-  //       name: newBillName,
-  //       amount: newBillAmount,
-  //       dueDate: newBillDueData,
-  //       plantoPay: newBillPlanToPay,
-  //       status: 'pending'
-  //     }
-  //   );
-  // }
-
   return (
     <>
       <Header />
