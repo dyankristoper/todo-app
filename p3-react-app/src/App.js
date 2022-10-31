@@ -23,7 +23,9 @@ const App = () => {
     <>
       <Header />
       <Routes>
-      <Route path='/' element={<HomePage />} />
+      <Route path='/' element={<HomePage
+        allPendingBills = {allPendingBills}
+        allPaidBills = {allPaidBills} />} />
       <Route path='/add-bills' element={<AddBills />} />
       <Route path='/pending-bills' element={ 
       <PendingBills
