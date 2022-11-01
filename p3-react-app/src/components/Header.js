@@ -1,25 +1,33 @@
 import {Link} from 'react-router-dom';
 
+import '../assets/styles/Header.css';
+
+import payment from '../assets/payment.png';
+
 const Header = () => {
   return (
     <header>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to='/'>Home</Link>
-                    </li>
-                    <li>
-                        <Link to='/add-bills'>Add Bills</Link>
-                    </li>
-                    <li>
-                        <Link to='/pending-bills'>Pending Bills</Link>
-                    </li>
-                    <li>
-                        <Link to='/paid-bills'>Paid Bills</Link>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <div className='branding'>
+        <img src={payment} alt = 'paymentlogo'/>
+        <h3>Due Date Wise</h3>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <Link className='link' to='/'>Home</Link>
+                </li>
+                <li>
+                    <Link className='link' to='/add-bills'>Add Bills</Link>
+                </li>
+                <li>
+                    <Link className='link' to='/pending-bills'>Pending Bills</Link>
+                </li>
+                <li>
+                    <Link className='link' to='/paid-bills'>Paid Bills</Link>
+                </li>
+            </ul>
+        </nav>    
+    </header>
   )
 }
 

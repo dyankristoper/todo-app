@@ -1,0 +1,41 @@
+header {
+    height: 10vh;
+    background: rgb(26, 26, 69);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.branding {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+img {
+    width: 10%;
+    height: 10%;
+    margin: 5px;
+}
+
+h3 {
+    margin-left: 10px;
+    font-size: 40px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    margin-left: 0px;
+}
+
+li {
+    color: aqua;
+    margin-right: 100px;
+    font-size: 20px ;
+}
+
+.link {
+    text-decoration: none;
+}

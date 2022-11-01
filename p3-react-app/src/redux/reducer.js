@@ -54,7 +54,7 @@ const reducer = (state = initialState, action) => {
             let currentBills2 = state.allBills;
             for( let index = 0; index < currentBills2.length; index++) {
                 if(currentBills2[index].name === action.payload.name) {
-                    currentBills2[index].status = 'PAID';
+                    currentBills2[index].status = 'PENDING';
                 }
             }
             return {...state, allBills: [...currentBills2] };

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AllBillRow from "../components/AllBillRow";
 
 const Homepage = ({allPendingBills, allPaidBills}) => {
@@ -48,9 +48,17 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
                   })
 
     let allTotal = 0;
-    const allBillsTotal = bills.map( bill => {
+    bills.map( bill => {
       allTotal = parseFloat(allTotal) + parseFloat(bill.amount)
     })
+
+  const [runningTotal, setRunningTotal] = useState(0);
+
+  useEffect(() => {
+    setRunningTotal( bills.filter( bill => bill.name.toUpperCase().includes( filterByName.toUpperCase() ) ).reduce(( accum, current ) => {
+      return accum + current.amount
+    },0));
+  }, [filterByName]);
 
   return (
     <>
@@ -64,6 +72,7 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
       </div>
       <div>
         <p>All Total: {allTotal}</p>
+        <p>Sub-total: { runningTotal }</p>
       </div>
       <table>
         <tr>
