@@ -85,11 +85,8 @@ const AddBills = () => {
         value = {billPlanToPay}
         onChange = {onBillPlanToPayChangeHandler}
         />
-        <br/>
             {/* Conditional rendering for error */}
             { hasError && <small className='error'>{ errorMessage }</small> }
-
-            <br/>
             <button type="submit">
                 + Add Bill
             </button>

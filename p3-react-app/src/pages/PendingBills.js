@@ -1,5 +1,7 @@
 import BillRow from "../components/BillRow";
 
+import '../assets/styles/PendingBills.css';
+
 
 const PendingBills = ({allPendingBills}) => {
   let pendingTotal = 0;
@@ -19,32 +21,38 @@ const PendingBills = ({allPendingBills}) => {
 
   return (
     <>
-      <div>
-        <p>Pending Total: {pendingTotal}</p>
-      </div>
-      <table>
-        <tr>
-            <td>
-                <p>Time Created</p>
-            </td>
-            <td>
-                <p>Date Created</p>
-            </td>
-            <td>
-                <p>Bill Name</p>
-            </td>
-            <td>
-                <p>Amount Due</p>
-            </td>
-            <td>
-                <p>Due Date</p>
-            </td>
-            <td>
-                <p>Plan To Pay</p>
-            </td>
-        </tr>
-        {pendingBills}
-    </table>
+      <main>
+        <div>
+          <h1 className='pending-bills'>Pending Bills</h1>
+          <p className='pending-total'>Pending Total: {pendingTotal}</p>
+        </div>
+        <table>
+          <tr>
+              <td className='pending-total'>
+                  <p>Time Created</p>
+              </td>
+              <td className='pending-total'>
+                  <p>Date Created</p>
+              </td>
+              <td className='pending-total'>
+                  <p>Bill Name</p>
+              </td>
+              <td className='pending-total'>
+                  <p>Amount Due</p>
+              </td>
+              <td className='pending-total'>
+                  <p>Due Date</p>
+              </td>
+              <td className='pending-total'>
+                  <p>Plan To Pay</p>
+              </td>
+              <td className='pending-total'>
+                  <p>Options</p>
+              </td>
+          </tr>
+          {pendingBills}
+      </table>
+    </main>
     </>
   )
 }

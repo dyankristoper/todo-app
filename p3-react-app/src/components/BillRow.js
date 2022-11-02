@@ -1,5 +1,7 @@
 import { useDispatch } from "react-redux";
 
+import '../assets/styles/BillRow.css';
+
 
 const BillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay, status}) => {
     const dispatch = useDispatch();
@@ -26,17 +28,17 @@ const BillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay, st
             </td>
             {
                 status === 'PENDING' &&
-                <button onClick = { () => dispatch({ type: 'PAID', payload: {name: name}})}>
+                <button className='buttons' onClick = { () => dispatch({ type: 'PAID', payload: {name: name}})}>
                     Paid
                 </button>
             }
             {
                 status === 'PAID' &&
-                <button onClick = { () => dispatch({ type: 'UNDO', payload: {name: name}})}>
+                <button className='buttons' onClick = { () => dispatch({ type: 'UNDO', payload: {name: name}})}>
                     Undo
                 </button>
             }
-            <button onClick={ () => dispatch({ type: 'REMOVE', payload: {name: name}})}>
+            <button className='buttons' onClick={ () => dispatch({ type: 'REMOVE', payload: {name: name}})}>
                 Remove
             </button>
         </tr>

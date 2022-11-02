@@ -1,0 +1,24 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paid-bills {
+    margin-top: 12vh;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+td {
+    text-align: center;
+    padding: 20px;
+}
+
+div {
+    text-align: center;
+}
+
+.paid-table, .paid-total {
+    font-weight: bold;
+}
