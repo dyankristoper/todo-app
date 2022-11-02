@@ -1,20 +1,31 @@
+// Packages
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
+// Styling
 import '../assets/styles/AddBills.css';
 
+// Adding bills function
 const AddBills = () => {
 
+  // Calling allBills
   const allBills = useSelector(state => state.allBills);
+  // Calling dispatch
   const dispatch = useDispatch();
 
+  // Navigate
+  const navigator = useNavigate();
+
+  // States
   const [billName, setBillName] = useState('');
   const [billAmount, setBillAmount] = useState(0);
   const [billDueDate, setBillDueDate] = useState({due: new Date()});
   const [billPlanToPay, setBillPlanToPay] = useState({due: new Date()});
-  const [ hasError, setHasError ] = useState( false );
+  const [hasError, setHasError] = useState( false );
   const [errorMessage, setErrorMessage] = useState('');
 
+  // on Bill Handlers
   const onBillNameChangeHandler = event => {
     setBillName(event.target.value);
   }
@@ -28,32 +39,36 @@ const AddBills = () => {
     setBillPlanToPay(event.target.value);
   }
 
+  // Submmit Form Handler
   const onSubmitFormHandler = event => {
+    // Prevent from reloading
     event.preventDefault();
 
-    if(billName.trim() === '' || billAmount === 0 || billAmount === '') {
-      setHasError( true );
-      setErrorMessage('Input Cannot Be Empty!');
-    }
-    else if(allBills.filter( bill => bill.name.trim().toUpperCase() === billName.trim().toUpperCase()).length !==0) {
-      setHasError( true );
+    // // Bill name already exist
+    if(allBills.filter( bill => 
+      bill.name.trim().toUpperCase() === billName.trim().toUpperCase()).length !==0) {
+        setHasError( true );
         setErrorMessage('Bill is already exist! Please try again.');
-    }
+      }
+      // Adding all input
     else {
+        alert(`You Have Added The Bill ${billName}!`);
         dispatch({type: 'ADD', payload: {
           name: billName,
           amount: billAmount,
           dueDate: billDueDate,
           planToPay: billPlanToPay,
           status: 'PENDING'
-
-        }})
-        setHasError( false );
-        setErrorMessage('');
-        setBillName('');
-        setBillAmount('');
-        setBillDueDate('');
-        setBillPlanToPay('');
+        }
+      })
+      // Resetting Form
+      setHasError( false );
+      setErrorMessage('');
+      setBillName('');
+      setBillAmount('');
+      setBillDueDate('');
+      setBillPlanToPay('');
+      navigator('/');
     }
 }
 
@@ -66,27 +81,33 @@ const AddBills = () => {
         type = 'text'
         value = {billName}
         onChange = {onBillNameChangeHandler}
+        required
         />
         <h3>Amount Due</h3>
         <input
         type = 'number'
         value = {billAmount}
+        min = '1'
         onChange = {onBillAmountChangeHandler}
+        required
         />
         <h3>Due Date</h3>
         <input
         type = 'date'
         value = {billDueDate}
         onChange = {onBillDueDateChangeHandler}
+        required
         />
         <h3>Plan To Pay</h3>
         <input
         type = 'date'
         value = {billPlanToPay}
         onChange = {onBillPlanToPayChangeHandler}
+        required
         />
             {/* Conditional rendering for error */}
-            { hasError && <small className='error'>{ errorMessage }</small> }
+            { hasError &&
+            <small className='error'>{errorMessage}</small> }
             <button type="submit">
                 + Add Bill
             </button>

@@ -1,10 +1,14 @@
+// Component
 import BillRow from '../components/BillRow';
 
+// Style
 import '../assets/styles/PaidBills.css';
 
+// PaidBills Function
 const PaidBills = ({allPaidBills}) => {
 
   let paidTotal =  0;
+  // Calculate paid bills
   const paidBills = allPaidBills.map( bill => {
     paidTotal = parseFloat(paidTotal) + parseFloat(bill.amount);
 
@@ -21,7 +25,7 @@ const PaidBills = ({allPaidBills}) => {
   
   return (
     <>
-      <main>
+      <main className='main-paid'>
         <div>
           <h1 className='paid-bills'>Paid Bills</h1>
           <p className='paid-total'>Paid Total: {paidTotal}</p>

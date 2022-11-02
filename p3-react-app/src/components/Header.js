@@ -1,7 +1,10 @@
+// Package
 import {Link} from 'react-router-dom';
 
+// Style
 import '../assets/styles/Header.css';
 
+// Image
 import payment from '../assets/payment.png';
 
 const Header = () => {

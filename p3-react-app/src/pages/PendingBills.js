@@ -1,10 +1,13 @@
+// Component
 import BillRow from "../components/BillRow";
 
+// Style
 import '../assets/styles/PendingBills.css';
 
-
+// PendingBill Function
 const PendingBills = ({allPendingBills}) => {
   let pendingTotal = 0;
+  // Calculate Pending Bills
   const pendingBills = allPendingBills.map( bill => {
     pendingTotal = parseFloat(pendingTotal) + parseFloat(bill.amount);
 
@@ -21,7 +24,7 @@ const PendingBills = ({allPendingBills}) => {
 
   return (
     <>
-      <main>
+      <main className='main-pending'>
         <div>
           <h1 className='pending-bills'>Pending Bills</h1>
           <p className='pending-total'>Pending Total: {pendingTotal}</p>

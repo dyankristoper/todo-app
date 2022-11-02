@@ -14,15 +14,20 @@ import PaidBills from './pages/PaidBills';
 
 const App = () => {
   
+  // Calling allBills on the reducer
   const bills = useSelector( state => state.allBills);
 
+  // Filtering Pending Bills
   const allPendingBills = bills.filter(bill => bill.status.toUpperCase() === 'PENDING');
 
+  // Filtering Paid Bills
   const allPaidBills = bills.filter(bill => bill.status.toUpperCase() === 'PAID');
 
   return (
     <>
+      {/* Calling the component Header */}
       <Header />
+      {/* Routing Paths */}
       <Routes>
       <Route path='/' element={<HomePage
         allPendingBills = {allPendingBills}
@@ -40,4 +45,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

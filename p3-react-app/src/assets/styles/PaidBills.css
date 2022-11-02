@@ -1,11 +1,13 @@
-main {
+.main-paid {
+    height: 92vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: auto;
 }
 
 .paid-bills {
-    margin-top: 12vh;
+    margin-top: 8vh;   
     font-weight: bold;
     font-size: 70px;
 }

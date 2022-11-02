@@ -18,4 +18,13 @@ form {
 
 button {
     border-radius: 12px;
+    transition: 150ms;
+}
+
+button:hover {
+    background-color: rgb(26, 26, 69);
+}
+
+button:active {
+    background-color: cyan;
 }

@@ -1,18 +1,27 @@
+//Packages
 import { useSelector } from "react-redux";
 import { useEffect, useState } from 'react';
 
+// Component
 import AllBillRow from "../components/AllBillRow";
 
+// Style
 import '../assets/styles/Homepage.css';
 
+// Image
 import payment from '../assets/payment.png';
 
+// Homepage function
 const Homepage = ({allPendingBills, allPaidBills}) => {
 
+  // Calling allBills
   const bills = useSelector( state => state.allBills);
+
+  // States
   const [filterByName, setFilterByName] = useState('');
   const [runningTotal, setRunningTotal] = useState(0);
 
+  // Show and filter all pendingBills
   const pendingBills = allPendingBills.filter(bill => {
     if (filterByName === '') {
       return bill;
@@ -33,6 +42,7 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
               status = {bill.status} />
   });
 
+  // Show and filter all paidBills
   const paidBills = allPaidBills.filter(bill => {
     if (filterByName === '') {
       return bill;
@@ -53,11 +63,14 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
                     status = {bill.status} />
                   })
 
+    // Calculate all total
     let allTotal = 0;
     bills.map( bill => {
       allTotal = parseFloat(allTotal) + parseFloat(bill.amount)
-    });
+    }
+  );
 
+  // Calculate Sub-Total
   useEffect(() => {
     setRunningTotal( bills.filter( bill => bill.name.toUpperCase().includes( filterByName.toUpperCase() ) ).reduce(( accum, current ) => {
       return accum + current.amount
@@ -68,17 +81,19 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
     <>
       <main>
         <div className='logo-title'>
+          <div className='innerlogotitle'>
           <img className='logo' src={payment} alt = 'paymentlogo'/>
           <h1 className='title'>Due Date Wise</h1>
+          </div>
           <input 
             type='text' 
             placeholder='Search Bill Name...' 
-            value={ filterByName }
-            onChange={ e => setFilterByName(e.target.value) }  
+            value={filterByName}
+            onChange={e => setFilterByName(e.target.value)}  
           />
         </div>
         <div className='home-total'>
-          <p>Sub-total: &#8369;{ runningTotal }</p>
+          <p>Sub-total: &#8369;{runningTotal}</p>
           <p>All Total: &#8369;{allTotal}</p>
         </div>
         <table>

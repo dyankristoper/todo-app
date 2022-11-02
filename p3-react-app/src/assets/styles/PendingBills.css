@@ -1,11 +1,13 @@
-main {
+.main-pending {
+    height: 92vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: auto;
 }
 
 .pending-bills {
-    margin-top: 12vh;
+    margin-top: 8vh;
     font-weight: bold;
     font-size: 70px;
 }
