@@ -27,4 +27,4 @@ const AllBillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay,
   )
 }
 
-export default AllBillRow
+export default AllBillRow;

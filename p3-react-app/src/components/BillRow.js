@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 
 
 const BillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay, status}) => {

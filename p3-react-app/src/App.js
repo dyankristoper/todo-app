@@ -7,10 +7,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 // Pages
-import HomePage from './pages/Homepage'
-import AddBills from './pages/AddBills'
-import PendingBills from './pages/PendingBills'
-import PaidBills from './pages/PaidBills'
+import HomePage from './pages/Homepage';
+import AddBills from './pages/AddBills';
+import PendingBills from './pages/PendingBills';
+import PaidBills from './pages/PaidBills';
 
 const App = () => {
   

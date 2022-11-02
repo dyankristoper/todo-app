@@ -1,8 +1,8 @@
-import React from 'react';
+import '../assets/styles/Footer.css';
 
 const Footer = () => {
   return (
-    <div>All Reserved by Shuriken Realm | 2022</div>
+    <footer>All Reserved by Shuriken Realm | 2022</footer>
   )
 }
 

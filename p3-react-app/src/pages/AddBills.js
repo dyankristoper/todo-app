@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import '../assets/styles/AddBills.css';
+
 const AddBills = () => {
 
   const allBills = useSelector(state => state.allBills);
@@ -58,30 +60,30 @@ const AddBills = () => {
   return (
     <>
       <form onSubmit = {onSubmitFormHandler}>
-      <h1>Adding Bills</h1>
+      <h1 className='bill-name'>Adding Bills</h1>
         <h3>Bill Name</h3>
         <input
         type = 'text'
         value = {billName}
-        onChange = { onBillNameChangeHandler}
+        onChange = {onBillNameChangeHandler}
         />
         <h3>Amount Due</h3>
         <input
         type = 'number'
         value = {billAmount}
-        onChange = { onBillAmountChangeHandler}
+        onChange = {onBillAmountChangeHandler}
         />
         <h3>Due Date</h3>
         <input
         type = 'date'
         value = {billDueDate}
-        onChange = { onBillDueDateChangeHandler}
+        onChange = {onBillDueDateChangeHandler}
         />
         <h3>Plan To Pay</h3>
         <input
         type = 'date'
         value = {billPlanToPay}
-        onChange = { onBillPlanToPayChangeHandler}
+        onChange = {onBillPlanToPayChangeHandler}
         />
         <br/>
             {/* Conditional rendering for error */}
@@ -91,7 +93,6 @@ const AddBills = () => {
             <button type="submit">
                 + Add Bill
             </button>
-
       </form>
     </>
   )
