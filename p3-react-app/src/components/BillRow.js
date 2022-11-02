@@ -30,7 +30,7 @@ const BillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay, st
                 {
                     status === 'PENDING' &&
                     <button className='paid'
-                     onClick = { () => 
+                     onClick = { () =>
                     dispatch({ type: 'PAID', payload: {name: name}})}>
                         Paid
                     </button>

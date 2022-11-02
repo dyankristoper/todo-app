@@ -123,6 +123,7 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
             {pendingBills}
             {paidBills}
         </table>
+        {(allPaidBills.length === 0 && allPendingBills.length === 0) && <h3> No History Bill/s</h3>}
       </main>
     </>
   )

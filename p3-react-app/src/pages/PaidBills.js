@@ -56,6 +56,7 @@ const PaidBills = ({allPaidBills}) => {
           </tr>
           {paidBills}
       </table>
+      {(allPaidBills.length === 0 ) && <h3> No Paid Bill/s</h3>}
     </main>
     </>
   )

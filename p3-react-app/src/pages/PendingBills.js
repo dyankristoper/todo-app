@@ -55,6 +55,7 @@ const PendingBills = ({allPendingBills}) => {
           </tr>
           {pendingBills}
       </table>
+      {(allPendingBills.length === 0 ) && <h3>No Pending Bill/s</h3>}
     </main>
     </>
   )
