@@ -1,5 +1,5 @@
 // Component
-import BillRow from "../components/BillRow";
+import BillRow from '../components/BillRow';
 
 // Style
 import '../assets/styles/PendingBills.css';
@@ -55,7 +55,11 @@ const PendingBills = ({allPendingBills}) => {
           </tr>
           {pendingBills}
       </table>
-      {(allPendingBills.length === 0 ) && <h3>No Pending Bill/s</h3>}
+      {/* If the are no Pending Bill/s */}
+      {
+        (allPendingBills.length === 0 ) && 
+        <h3>No Pending Bill/s</h3>
+      }
     </main>
     </>
   )

@@ -1,9 +1,9 @@
 //Packages
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
 // Component
-import AllBillRow from "../components/AllBillRow";
+import AllBillRow from '../components/AllBillRow';
 
 // Style
 import '../assets/styles/Homepage.css';
@@ -72,7 +72,10 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
 
   // Calculate Sub-Total
   useEffect(() => {
-    setRunningTotal( bills.filter( bill => bill.name.toUpperCase().includes( filterByName.toUpperCase() ) ).reduce(( accum, current ) => {
+    setRunningTotal( bills.filter( bill => 
+      bill.name.toUpperCase()
+      .includes(filterByName.toUpperCase()))
+      .reduce((accum, current) => {
       return accum + current.amount
     },0));
   }, [filterByName]);
@@ -123,7 +126,12 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
             {pendingBills}
             {paidBills}
         </table>
-        {(allPaidBills.length === 0 && allPendingBills.length === 0) && <h3> No History Bill/s</h3>}
+        {/* If the are no Bill/s */}
+        {
+          (allPaidBills.length === 0 && 
+          allPendingBills.length === 0) && 
+          <h3> No History Bill/s</h3>
+        }
       </main>
     </>
   )

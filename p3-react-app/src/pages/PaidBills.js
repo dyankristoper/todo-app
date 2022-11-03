@@ -56,7 +56,11 @@ const PaidBills = ({allPaidBills}) => {
           </tr>
           {paidBills}
       </table>
-      {(allPaidBills.length === 0 ) && <h3> No Paid Bill/s</h3>}
+      {/* If the are no Paid Bill/s */}
+      {
+        (allPaidBills.length === 0 ) && 
+        <h3> No Paid Bill/s</h3>
+      }
     </main>
     </>
   )

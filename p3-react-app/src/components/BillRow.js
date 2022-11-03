@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
 
 import '../assets/styles/BillRow.css';
 
@@ -53,4 +53,4 @@ const BillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay, st
   )
 }
 
-export default BillRow
+export default BillRow;

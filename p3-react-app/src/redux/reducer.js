@@ -1,22 +1,40 @@
 const initialState = {
     allBills: [
         {
-        timeCreated: '4:14:42 PM',
-        dateCreated: 'Fri Oct 28 2022',
-        name: 'PLDT',
-        amount: 1699,
-        dueDate: '2022-11-20',
-        planToPay: '2022-11-18',
-        status: 'PENDING',
+            timeCreated: '4:14:42 PM',
+            dateCreated: 'Fri Oct 28 2022',
+            name: 'PLDTNOV',
+            amount: 1699,
+            dueDate: '2022-11-20',
+            planToPay: '2022-11-18',
+            status: 'PAID'
         },
         {
-        timeCreated: '4:14:42 PM',
-        dateCreated: 'Fri Oct 28 2022',
-        name: 'GLOBE',
-        amount: 999,
-        dueDate: '2022-11-20',
-        planToPay: '2022-11-18',
-        status: 'PAID'
+            timeCreated: '5:22:52 AM',
+            dateCreated: 'Fri Oct 28 2022',
+            name: 'GLOBENOV',
+            amount: 999,
+            dueDate: '2022-11-22',
+            planToPay: '2022-11-18',
+            status: 'PAID'
+        },
+        {
+            timeCreated: '12:00:00 AM',
+            dateCreated: 'Tue Nov 29 2022',
+            name: 'PLDTDEC',
+            amount: 1699,
+            dueDate: '2022-12-20',
+            planToPay: '2022-12-18',
+            status: 'PENDING',
+        },
+        {
+            timeCreated: '12:02:36 AM',
+            dateCreated: 'Tue Nov 29 2022',
+            name: 'GLOBEDEC',
+            amount: 999,
+            dueDate: '2022-12-22',
+            planToPay: '2022-12-18',
+            status: 'PENDING',
         }
     ]
 };

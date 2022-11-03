@@ -1,7 +1,7 @@
 // Packages
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 
 // Styling
 import '../assets/styles/AddBills.css';
@@ -68,6 +68,7 @@ const AddBills = () => {
       setBillAmount('');
       setBillDueDate('');
       setBillPlanToPay('');
+      // Going back to homepage
       navigator('/');
     }
 }
@@ -108,7 +109,7 @@ const AddBills = () => {
             {/* Conditional rendering for error */}
             { hasError &&
             <small className='error'>{errorMessage}</small> }
-            <button type="submit">
+            <button type='submit'>
                 + Add Bill
             </button>
       </form>
