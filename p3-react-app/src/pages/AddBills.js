@@ -52,7 +52,7 @@ const AddBills = () => {
       }
       // Adding all input
     else {
-        alert(`You Have Added The Bill ${billName}!`);
+        alert(`You Have Added The Bill ${billName.toUpperCase()}!`);
         dispatch({type: 'ADD', payload: {
           name: billName,
           amount: billAmount,
