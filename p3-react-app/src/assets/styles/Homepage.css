@@ -41,6 +41,7 @@ input {
     text-align: center;
     border-radius: 12px;
     border-color: rgba(123,112,238,1);
+    color: rgba(123,112,238,1);
     margin-bottom: 20px;
 }
 

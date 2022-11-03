@@ -47,5 +47,5 @@ li {
 }
 
 .link:active {
-    color: white;
+    color: rgba(123,112,238,1);
 }

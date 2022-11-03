@@ -19,6 +19,7 @@ form {
 button {
     border-radius: 12px;
     transition: 150ms;
+    color: rgba(123,112,238,1);
 }
 
 button:hover {

@@ -6,6 +6,27 @@ import '../assets/styles/BillRow.css';
 const BillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay, status}) => {
     const dispatch = useDispatch();
 
+    const onPaidClickHandler = () => {
+        const confirmbox = window.confirm('This will add to the paid bill list!')
+        if (confirmbox === true) {
+            dispatch({ type: 'PAID', payload: {name: name}})
+        }
+    }
+
+    const onRemoveClickHandler = () => {
+        const confirmbox = window.confirm('This will remove to the bill list!')
+        if (confirmbox === true) {
+            dispatch({ type: 'REMOVE', payload: {name: name}})
+        }
+    }
+
+    const onUndoClickHandler = () => {
+        const confirmbox = window.confirm('This will be back to the pending bill list!')
+        if (confirmbox === true) {
+            dispatch({ type: 'UNDO', payload: {name: name}})
+        }
+    }
+
   return (
         <tr>
             <td>
@@ -30,22 +51,19 @@ const BillRow = ({timeCreated, dateCreated, name, amount, dueDate, planToPay, st
                 {
                     status === 'PENDING' &&
                     <button className='paid'
-                     onClick = { () =>
-                    dispatch({ type: 'PAID', payload: {name: name}})}>
+                     onClick = {onPaidClickHandler}>
                         Paid
                     </button>
                 }
                 {
                     status === 'PAID' &&
                     <button className='undo' 
-                    onClick = { () => 
-                    dispatch({ type: 'UNDO', payload: {name: name}})}>
+                    onClick = {onUndoClickHandler}>
                         Undo
                     </button>
                 }
                 <button className='remove' 
-                onClick={ () => 
-                    dispatch({ type: 'REMOVE', payload: {name: name}})}>
+                onClick={onRemoveClickHandler}>
                     Remove
                 </button>
             </td>

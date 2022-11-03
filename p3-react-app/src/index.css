@@ -16,5 +16,6 @@ code {
 
 * {
   font-family: 'Oswald', sans-serif;
-  color: rgb(84, 73, 204);
+  /* color: rgb(84, 73, 204); */
+  color: whitesmoke;
 }
