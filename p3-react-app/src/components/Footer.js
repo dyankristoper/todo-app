@@ -3,7 +3,7 @@ import '../assets/styles/Footer.css';
 
 const Footer = () => {
   return (
-    <footer>All Reserved by Shuriken Realm | 2022</footer>
+    <footer>All Rights Reserved by Shuriken Realm | 2022</footer>
   )
 }
 
