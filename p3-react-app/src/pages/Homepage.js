@@ -61,14 +61,14 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
                     dueDate = {bill.dueDate}
                     planToPay = {bill.planToPay}
                     status = {bill.status} />
-                  })
+                  });
 
-    // Calculate all total
-    let allTotal = 0;
-    bills.map( bill => {
-      allTotal = parseFloat(allTotal) + parseFloat(bill.amount)
-    }
-  );
+  //   // Calculate all total
+  //   let allTotal = 0;
+  //   bills.map( bill => {
+  //     allTotal = parseFloat(allTotal) + parseFloat(bill.amount)
+  //   }
+  // );
 
   // Calculate Sub-Total
   useEffect(() => {
@@ -85,8 +85,7 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
       <main>
         <div className='logo-title'>
           <div className='innerlogotitle'>
-          <img className='logo' src={payment} alt = 'paymentlogo'/>
-          <h1 className='title'>Due Date Wise</h1>
+          <h2 className='title'>"Let's Plan Due Dates Wisely!"</h2>
           </div>
           <input 
             type='text' 
@@ -96,8 +95,8 @@ const Homepage = ({allPendingBills, allPaidBills}) => {
           />
         </div>
         <div className='home-total'>
-          <p>Sub-total: &#8369;{runningTotal}</p>
-          <p>All Total: &#8369;{allTotal}</p>
+          <p>Total: &#8369;{runningTotal}</p>
+          {/* <p>All Total: &#8369;{allTotal}</p> */}
         </div>
         <table>
           <tr>

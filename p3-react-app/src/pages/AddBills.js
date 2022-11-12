@@ -39,7 +39,7 @@ const AddBills = () => {
     setBillPlanToPay(event.target.value);
   }
 
-  // Submmit Form Handler
+  // Submit Form Handler
   const onSubmitFormHandler = event => {
     // Prevent from reloading
     event.preventDefault();
@@ -77,6 +77,15 @@ const AddBills = () => {
     <>
       <form onSubmit = {onSubmitFormHandler}>
       <h1 className='bill-name'>Adding Bills</h1>
+      <p>
+        Note:
+      </p>
+      <p>
+      Recommended naming format for easy search. First name of bill, second is the month, and last is the year.
+      </p>
+      <p>
+      Ex. BILLMONTH2022
+      </p>
         <h3>Bill Name</h3>
         <input
         type = 'text'
@@ -95,6 +104,7 @@ const AddBills = () => {
         <h3>Due Date</h3>
         <input
         type = 'date'
+        placeholder = 'dd-mm-yyyy'
         value = {billDueDate}
         onChange = {onBillDueDateChangeHandler}
         required
@@ -102,6 +112,7 @@ const AddBills = () => {
         <h3>Plan To Pay</h3>
         <input
         type = 'date'
+        placeholder = 'dd-mm-yyyy'
         value = {billPlanToPay}
         onChange = {onBillPlanToPayChangeHandler}
         required

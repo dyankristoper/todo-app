@@ -8,24 +8,10 @@ form {
 }
 
 .bill-name {
-    margin-top: 12vh;
+    margin-top: 6vh;
     font-size: 70px;
 }
 
 .error {
-    color: white;
-}
-
-button {
-    border-radius: 12px;
-    transition: 150ms;
-    color: rgba(123,112,238,1);
-}
-
-button:hover {
-    background-color: rgb(26, 26, 69);
-}
-
-button:active {
-    background-color: cyan;
+    color: red;
 }
