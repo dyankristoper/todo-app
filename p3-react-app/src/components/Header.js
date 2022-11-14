@@ -28,6 +28,12 @@ const Header = () => {
                 <li>
                     <Link className='link' to='/paid-bills'>Paid Bills</Link>
                 </li>
+                <li>
+                    <Link className='link login' to='/login'>Log In</Link>
+                </li>
+                <li>
+                    <Link className='link register' to='/register'>Register</Link>
+                </li>
             </ul>
         </nav>    
     </header>

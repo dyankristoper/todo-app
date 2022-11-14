@@ -34,7 +34,7 @@ ul {
 
 li {
     color: aqua;
-    margin-right: 100px;
+    margin-right: 60px;
     font-size: 20px;
 }
 
@@ -48,4 +48,18 @@ li {
 
 .link:active {
     color: rgba(123,112,238,1);
+}
+
+.login, .register {
+    border-style: solid;
+    border-radius: 12px;
+    padding: 0px 5px;
+}
+
+.login {
+    background-color: gray;
+}
+
+.register {
+    margin-left: -50px;
 }

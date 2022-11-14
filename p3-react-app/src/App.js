@@ -11,6 +11,8 @@ import HomePage from './pages/Homepage';
 import AddBills from './pages/AddBills';
 import PendingBills from './pages/PendingBills';
 import PaidBills from './pages/PaidBills';
+import LogIn from './pages/LogIn';
+import Register from './pages/Register';
 
 const App = () => {
   
@@ -39,6 +41,10 @@ const App = () => {
       <Route path='/paid-bills' element={ 
       <PaidBills 
         allPaidBills = {allPaidBills}/>} />
+      <Route path='/login' element={
+        <LogIn />} />
+      <Route path='/register' element={
+        <Register />} />
       </Routes>
       <Footer />
     </>

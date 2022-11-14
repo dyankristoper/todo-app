@@ -36,7 +36,8 @@ const initialState = {
             planToPay: '2022-12-18',
             status: 'PENDING',
         }
-    ]
+    ],
+    allUsers: []
 };
 
 
